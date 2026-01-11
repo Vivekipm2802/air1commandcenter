@@ -24,28 +24,28 @@ export default function Component() {
       score: "211/360",
       date: "19th February 2026",
       rank: "Rank 7",
-      img: "/HashIPMAT14.jpeg",
+      img: "/air1commandcenter/HashIPMAT14.jpeg",
     },
     {
       name: "Hash IPMAT 20",
       score: "184/360",
       date: "7th March 26",
       rank: "Rank 11",
-      img: "/HashIPMAT20.jpeg",
+      img: "/air1commandcenter/HashIPMAT20.jpeg",
     },
     {
       name: "Hash IPMAT 19",
       score: "186/360",
       date: "13 April 2025",
       rank: "Rank 5 ",
-      img: "/HashIPMAT19.jpeg",
+      img: "/air1commandcenter/HashIPMAT19.jpeg",
     },
     {
       name: "Hash IPMAT 17",
       score: "226/360",
       date: "12th April 2025",
       rank: "Rank 3",
-      img: "/HashIPMAT17.jpeg",
+      img: "/air1commandcenter/HashIPMAT17.jpeg",
     },
   ];
 
@@ -73,7 +73,7 @@ export default function Component() {
             <div className="relative">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-4 border-[#f9a01b]">
                 <img
-                  src="/air1.png"
+                  src="/air1commandcenter/air1.png"
                   alt="AIR 1"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "50% 20%" }}
@@ -210,7 +210,9 @@ export default function Component() {
                         </div>
                       </div>
                       <button
-                        onClick={() => window.open(mockScores[activeSlide].img, "_blank")}
+                        onClick={() =>
+                          window.open(mockScores[activeSlide].img, "_blank")
+                        }
                         className="text-[#f9a01b] text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition-transform"
                       >
                         Try Now <ChevronRight className="w-4 h-4" />
