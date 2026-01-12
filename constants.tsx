@@ -1,40 +1,98 @@
-
-import React from 'react';
-import { 
-  FileText, 
-  Zap, 
-  Star, 
-  BookOpen, 
-  Calendar, 
-  Info, 
+import React from "react";
+import {
+  FileText,
+  Zap,
+  Star,
+  BookOpen,
+  Calendar,
+  Info,
   School,
   LayoutDashboard,
   BarChart3,
   Video,
   Users,
-  CreditCard
-} from 'lucide-react';
-import { ResourceTab, CollegeInfo, ExamForm } from './types';
+  CreditCard,
+} from "lucide-react";
+import { ResourceTab, CollegeInfo, ExamForm } from "./types";
 
 export const SIDEBAR_ITEMS = [
-  { id: 'nlu_predictor', label: 'NLU Predictor', icon: <LayoutDashboard className="w-5 h-5" />, active: true },
-  { id: 'pref_list', label: 'NLU Preference List', icon: <BarChart3 className="w-5 h-5" /> },
-  { id: 'ailet_predictor', label: 'AILET Predictor', icon: <BarChart3 className="w-5 h-5" /> },
-  { id: 'written_analysis', label: 'Written Analysis', icon: <FileText className="w-5 h-5" /> },
-  { id: 'video_analysis', label: 'Video Analysis', icon: <Video className="w-5 h-5" /> },
-  { id: 'mentors', label: 'Connect With Mentors', icon: <Users className="w-5 h-5" /> },
-  { id: 'flashcards', label: 'GK Flashcards', icon: <CreditCard className="w-5 h-5" /> },
+  {
+    id: "nlu_predictor",
+    label: "NLU Predictor",
+    icon: <LayoutDashboard className="w-5 h-5" />,
+    active: true,
+  },
+  {
+    id: "pref_list",
+    label: "NLU Preference List",
+    icon: <BarChart3 className="w-5 h-5" />,
+  },
+  {
+    id: "ailet_predictor",
+    label: "AILET Predictor",
+    icon: <BarChart3 className="w-5 h-5" />,
+  },
+  {
+    id: "written_analysis",
+    label: "Written Analysis",
+    icon: <FileText className="w-5 h-5" />,
+  },
+  {
+    id: "video_analysis",
+    label: "Video Analysis",
+    icon: <Video className="w-5 h-5" />,
+  },
+  {
+    id: "mentors",
+    label: "Connect With Mentors",
+    icon: <Users className="w-5 h-5" />,
+  },
+  {
+    id: "flashcards",
+    label: "GK Flashcards",
+    icon: <CreditCard className="w-5 h-5" />,
+  },
 ];
 
 export const RESOURCE_TABS = [
-  { id: ResourceTab.PYQ, icon: <FileText className="w-5 h-5" />, label: 'PYQ' },
-  { id: ResourceTab.CHEATSHEETS, icon: <Zap className="w-5 h-5" />, label: 'CheatSheets' },
-  { id: ResourceTab.TOPPERS, icon: <Star className="w-5 h-5" />, label: "Topper's Mouth", isNew: true },
-  { id: ResourceTab.MIND_JOURNALS, icon: <BookOpen className="w-5 h-5" />, label: 'MIND JOURNALS', isNew: true },
-  { id: ResourceTab.FORMS, icon: <Calendar className="w-5 h-5" />, label: 'Forms' },
-  { id: ResourceTab.DESK, icon: <Info className="w-5 h-5" />, label: 'Eligibility' },
-  { id: ResourceTab.COLLEGES, icon: <School className="w-5 h-5" />, label: 'Cut Offs' },
-  { id: ResourceTab.VIDEO_HUB, icon: <Video className="w-5 h-5" />, label: 'LearnFlix' },
+  { id: ResourceTab.PYQ, icon: <FileText className="w-5 h-5" />, label: "PYQ" },
+  {
+    id: ResourceTab.CHEATSHEETS,
+    icon: <Zap className="w-5 h-5" />,
+    label: "CheatSheets",
+  },
+  {
+    id: ResourceTab.TOPPERS,
+    icon: <Star className="w-5 h-5" />,
+    label: "Topper's Mouth",
+    isNew: true,
+  },
+  {
+    id: ResourceTab.MIND_JOURNALS,
+    icon: <BookOpen className="w-5 h-5" />,
+    label: "MIND JOURNALS",
+    isNew: true,
+  },
+  {
+    id: ResourceTab.FORMS,
+    icon: <Calendar className="w-5 h-5" />,
+    label: "Forms",
+  },
+  {
+    id: ResourceTab.DESK,
+    icon: <Info className="w-5 h-5" />,
+    label: "Eligibility",
+  },
+  {
+    id: ResourceTab.COLLEGES,
+    icon: <School className="w-5 h-5" />,
+    label: "Cut Offs",
+  },
+  {
+    id: ResourceTab.VIDEO_HUB,
+    icon: <Video className="w-5 h-5" />,
+    label: "LearnFlix",
+  },
 ];
 
 export const FORMS_DATA: ExamForm[] = [
@@ -104,7 +162,7 @@ export const FORMS_DATA: ExamForm[] = [
     endDate: "20 November 2025",
     examName: "IIM B UG Exam",
     examDate: "13th Dec '2025",
-    status: "Open",
+    status: "Closed",
     link: "https://cdn.digialm.com/EForms/configuredHtml/1345/96226/Registration.html",
     courses: "BSc (Data Science & Economics)",
   },
@@ -165,7 +223,7 @@ export const FORMS_DATA: ExamForm[] = [
     examName: "CUET 2026",
     examDate: "11th to 31st May 2026",
     status: "Open",
-    link: "https://cuet.samarth.ac.in/",
+    link: "https://examinationservices.nic.in/ExamSysCUETUG26/root/Home.aspx?enc=Ei4cajBkK1gZSfgr53ImFYsjZOdyj8DuPcxGBqAK2DwPXgGzSvy8OkvXqQJ0Bni9",
     courses: "B.S. in Management & Public Policy (4-Years)",
   },
   {
@@ -186,16 +244,17 @@ export const FORMS_DATA: ExamForm[] = [
     examDate: "Coming Soon",
     status: "Open",
     link: "https://www.mastersunion.org/",
-    courses: "UG Programme in Technology & Business Management (4 Years), UG Programme in Psychology & Marketing (4 Years)",
+    courses:
+      "UG Programme in Technology & Business Management (4 Years), UG Programme in Psychology & Marketing (4 Years)",
   },
   {
-    name: "Symbiosis (SET 2025)",
+    name: "Symbiosis (SET 2026)",
     startDate: "April 15, 2026",
     endDate: "To be announced",
     examName: "SET (Symbiosis Entrance Test)",
     examDate: "Test 01: May 02, 2026 Test 02: May 10, 2026",
     status: "Coming Soon",
-    link: "https://www.set-test.org/",
+    link: "https://www.set-test.org/?utm_source=google&utm_medium=search&utm_campaign=google-search-brand-set-bba-ent-kwd-india",
     courses: "BBA / BBA (Hons) – 4 Years",
   },
   {
@@ -209,14 +268,15 @@ export const FORMS_DATA: ExamForm[] = [
     courses: "BBA / BBA (Hons)",
   },
   {
-    name: "NMIMS (NPAT 2025)",
+    name: "NMIMS (NPAT 2026)",
     startDate: "To be announced",
     endDate: "To be announced",
     examName: "NPAT 2026",
     examDate: "Coming Soon",
     status: "Coming Soon",
     link: "https://apply.nicmar.ac.in/",
-    courses: "IPM (5 Years), BBA (3-Years), BBA (International Business), Bachelor in Business Management & Marketing",
+    courses:
+      "IPM (5 Years), BBA (3-Years), BBA (International Business), Bachelor in Business Management & Marketing",
   },
   {
     name: "NFSU",
@@ -225,7 +285,7 @@ export const FORMS_DATA: ExamForm[] = [
     examName: "CUET 2026",
     examDate: "11th to 31st May 2026",
     status: "Open",
-    link: "https://cuet.samarth.ac.in/",
+    link: "https://examinationservices.nic.in/ExamSysCUETUG26/root/Home.aspx?enc=Ei4cajBkK1gZSfgr53ImFYsjZOdyj8DuPcxGBqAK2DwPXgGzSvy8OkvXqQJ0Bni9",
     courses: "BBA + MBA",
   },
   {
@@ -235,7 +295,7 @@ export const FORMS_DATA: ExamForm[] = [
     examName: "IPMAT, JIPMAT, JEE, SAT, CLAT, MET",
     examDate: "Coming Soon",
     status: "Coming Soon",
-    link: "https://www.tapmi.edu.in/",
+    link: "https://apply.manipal.edu/login?ec=302&startURL=%2F",
     courses: "IPM (5-Years) / BBA (Hons) – (4-Years)",
   },
   {
@@ -245,7 +305,7 @@ export const FORMS_DATA: ExamForm[] = [
     examName: "IPMAT Indore / KAT (Krea Aptitude Test)",
     examDate: "Thursday, 9 Apr 2026 to Wednesday, 15 Apr 2026",
     status: "Open",
-    link: "https://ifmrgsbadmissions.krea.edu.in/ifmr-bba-programme-applynow",
+    link: "https://ifmrgsbadmissions.krea.edu.in/ifmr-bba-programme-applynow?utm_source=IPM%20CAREER&utm_medium=Banner&utm_campaign=Kanpur&utm_content=header&_gl=1*1iztjz5*_ga*MTI0MDgwMDg2MC4xNjcwODU4Mzg4*_ga_K846DTLBHK*czE3Njc5NTQ0MjUkbzMwJGcwJHQxNzY3OTU0NDI1JGo2MCRsMCRoMA",
     courses: "Integrated BBA + MBA (5-Years)",
   },
   {
@@ -275,7 +335,7 @@ export const FORMS_DATA: ExamForm[] = [
     examName: "IPMAT Indore",
     examDate: "4th May '2026",
     status: "Coming Soon",
-    link: "https://www.alliance.edu.in/",
+    link: "https://apply.alliance.edu.in/undergraduate-application-form-2026?utm_source=IPMcareer&utm_medium=Kanpur&utm_campaign=BBA2026",
     courses: "BBA (Hons.) & BCom (Hons)",
   },
   {
@@ -295,7 +355,7 @@ export const FORMS_DATA: ExamForm[] = [
     examName: "Not mandatory",
     examDate: "Coming Soon",
     status: "Open",
-    link: "https://www.ashoka.edu.in/",
+    link: "https://application.ashoka.edu.in/?utm_source=Google&utm_medium=search&utm_campaign=R2-26-B-India&utm_campaignid=22898927690&utm_adgroupid=183539886843&utm_creativeid=769580131880&utm_matchtype=b&utm_device=c&utm_network=g&utm_keyword=ashoka%20university%20application&utm_placement=&gad_source=1&gad_campaignid=22898927690&gbraid=0AAAAACmBNmdsBEsKNh9x2v3tOBhy3NN-l&gclid=CjwKCAiA64LLBhBhEiwA-PxguzoY3ZpRvP1UVxhHFKNjomrotQ1yhR1G9oN6ZwYGFqhbllmz0Tf5NBoCncAQAvD_BwE#form",
     courses: "BA (Economics / Political Science + Management)",
   },
 ];

@@ -24,28 +24,28 @@ export default function Component() {
       score: "211/360",
       date: "19th February 2026",
       rank: "Rank 7",
-      img: "/air1commandcenter/HashIPMAT14.jpeg",
+      img: "/HashIPMAT14.jpeg",
     },
     {
       name: "Hash IPMAT 20",
       score: "184/360",
       date: "7th March 26",
       rank: "Rank 11",
-      img: "/air1commandcenter/HashIPMAT20.jpeg",
+      img: "/HashIPMAT20.jpeg",
     },
     {
       name: "Hash IPMAT 19",
       score: "186/360",
       date: "13 April 2025",
       rank: "Rank 5 ",
-      img: "/air1commandcenter/HashIPMAT19.jpeg",
+      img: "/HashIPMAT19.jpeg",
     },
     {
       name: "Hash IPMAT 17",
       score: "226/360",
       date: "12th April 2025",
       rank: "Rank 3",
-      img: "/air1commandcenter/HashIPMAT17.jpeg",
+      img: "/HashIPMAT17.jpeg",
     },
   ];
 
@@ -73,7 +73,8 @@ export default function Component() {
             <div className="relative">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-4 border-[#f9a01b]">
                 <img
-                  src="/air1commandcenter/air1.png"
+                  // src="/air1commandcenter/air1.png"
+                  src="/air1.png"
                   alt="AIR 1"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: "50% 20%" }}
@@ -88,7 +89,7 @@ export default function Component() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#f9a01b] text-[#f9a01b] text-xs font-bold mb-6">
                 <Star className="w-3 h-3 fill-current" /> SUCCESS STORY
               </div>
-              <h2 className="text-4xl md:text-6xl font-black mb-4 text-white whitespace-nowrap">
+              <h2 className="text-4xl md:text-6xl font-black mb-4 text-white">
                 The Blueprint of <span className="text-[#f9a01b]">AIR 1.</span>
               </h2>
               <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
@@ -211,7 +212,10 @@ export default function Component() {
                       </div>
                       <button
                         onClick={() =>
-                          window.open(mockScores[activeSlide].img, "_blank")
+                          window.open(
+                            "https://study.ipmcareer.com/mock/81568d95-7c5f-4b6b-bb38-727cdb7cdf48",
+                            "_blank"
+                          )
                         }
                         className="text-[#f9a01b] text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition-transform"
                       >
@@ -249,13 +253,21 @@ export default function Component() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-orange-500 transition-all text-left flex items-center gap-6 cursor-pointer group">
+            <div
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1Wn7z6unSpNQSV7U0dK_mO33zYcGE46qi/view?usp=sharing",
+                  "_blank"
+                )
+              }
+              className="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-orange-500 transition-all text-left flex items-center gap-6 cursor-pointer group"
+            >
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-[#f9a01b] group-hover:bg-[#f9a01b] group-hover:text-black transition-all">
                 <FileText className="w-8 h-8" />
               </div>
               <div className="flex-1">
                 <h4 className="font-black text-lg text-white">
-                  5000+ Solved MCQs
+                  500+ Solved MCQs
                 </h4>
                 <p className="text-slate-500 text-sm">
                   Every question I solved in one PDF.
@@ -264,7 +276,15 @@ export default function Component() {
               <Download className="w-6 h-6 text-slate-700 group-hover:text-orange-500 transition-colors" />
             </div>
 
-            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-green-500 transition-all text-left flex items-center gap-6 cursor-pointer group">
+            <div
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/spreadsheets/d/10RMRmi6gtHT5xQIiTvRPadeVTS2tedcI1BRALMKFztQ/edit?gid=684469844#gid=684469844",
+                  "_blank"
+                )
+              }
+              className="bg-slate-900 p-8 rounded-2xl border border-slate-800 hover:border-green-500 transition-all text-left flex items-center gap-6 cursor-pointer group"
+            >
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-black transition-all">
                 <Table className="w-8 h-8" />
               </div>

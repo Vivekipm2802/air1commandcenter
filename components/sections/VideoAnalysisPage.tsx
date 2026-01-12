@@ -9,30 +9,35 @@ export default function Component() {
       url: "https://youtu.be/Q7lS5zdaOKM?si=lZneP57xGJCi6HfL",
       description:
         "Quick strategies to clear quantitative aptitude cutoffs efficiently",
+      category: "Quantitative Aptitude",
     },
     {
       id: 2,
       title: "Introduction to Numbers",
       url: "https://youtu.be/raKEb6Ax4WE",
       description: "Learn the fundamentals of number systems and concepts",
+      category: "Quantitative Aptitude",
     },
     {
       id: 3,
       title: "Introduction to Averages",
       url: "https://youtu.be/bBhzPsinUYY",
       description: "Master the basics of averages and their applications",
+      category: "Quantitative Aptitude",
     },
     {
       id: 4,
       title: "Reading Comprehension (Tones)",
       url: "https://youtu.be/CDEWTaMInUA",
       description: "Understanding tones and nuances in reading comprehension",
+      category: "Verbal Ability",
     },
     {
       id: 5,
       title: "Root Words",
       url: "https://youtu.be/wXakzp9DQYo",
       description: "Build vocabulary through understanding root words",
+      category: "Verbal Ability",
     },
     {
       id: 6,
@@ -40,6 +45,7 @@ export default function Component() {
       url: "https://youtu.be/COMWsh7rIE0",
       description:
         "IPMAT Indore 2023 QA SA Solutions || IPMAT 2023 Solutions Part 1",
+      category: "Quantitative Aptitude",
     },
     {
       id: 7,
@@ -47,10 +53,20 @@ export default function Component() {
       url: "https://youtu.be/OpngTNZGUw8",
       description:
         "IPMAT Indore 2023 QA MCQ Solutions || IPMAT 2023 Solutions Part 2 (A)",
+      category: "Quantitative Aptitude",
     },
   ];
 
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [activeTab, setActiveTab] = useState("Quantitative Aptitude");
+
+  const categories = [
+    "Quantitative Aptitude",
+    "Verbal Ability",
+    "Logical Reasoning",
+  ];
+
+  const filteredVideos = videos.filter((video) => video.category === activeTab);
 
   const extractVideoId = (url) => {
     const regExp =
@@ -77,8 +93,24 @@ export default function Component() {
           </p>
         </div>
 
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveTab(category)}
+              className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeTab === category
+                  ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30 scale-105"
+                  : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white border border-gray-700"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((video, index) => {
+          {filteredVideos.map((video, index) => {
             const videoId = extractVideoId(video.url);
             const thumbnailUrl = videoId
               ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
@@ -130,7 +162,7 @@ export default function Component() {
           })}
         </div>
 
-        {videos.length === 0 && (
+        {filteredVideos.length === 0 && (
           <div className="text-center py-20">
             <div className="inline-block p-6 rounded-full bg-gray-800 mb-4">
               <Play className="w-16 h-16 text-purple-400" />

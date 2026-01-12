@@ -47,13 +47,36 @@ const audioLogs = [
   },
 ];
 
+const formatTime = (seconds) => {
+  if (!seconds) return "0:00";
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, "0")}`;
+};
+
 export default function Component() {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [durations, setDurations] = useState({});
   const audioRef = useRef(null);
 
   const currentLog = currentIndex !== null ? audioLogs[currentIndex] : null;
+
+  useEffect(() => {
+    audioLogs.forEach((log) => {
+      const audio = new Audio(log.audio);
+      audio.preload = "metadata";
+      audio.onloadedmetadata = () => {
+        setDurations((prev) => ({
+          ...prev,
+          [log.id]: audio.duration,
+        }));
+      };
+    });
+  }, []);
 
   const playAudio = (index) => {
     const audio = audioRef.current;
@@ -61,15 +84,19 @@ export default function Component() {
 
     setCurrentIndex(index);
     setProgress(0);
-    
+    setCurrentTime(0);
+
     audio.src = audioLogs[index].audio;
     audio.load();
-    audio.play().then(() => {
-      setIsPlaying(true);
-    }).catch(err => {
-      console.error("Playback failed:", err);
-      setIsPlaying(false);
-    });
+    audio
+      .play()
+      .then(() => {
+        setIsPlaying(true);
+      })
+      .catch((err) => {
+        console.error("Playback failed:", err);
+        setIsPlaying(false);
+      });
   };
 
   const togglePlay = () => {
@@ -85,11 +112,14 @@ export default function Component() {
       audio.pause();
       setIsPlaying(false);
     } else {
-      audio.play().then(() => {
-        setIsPlaying(true);
-      }).catch(err => {
-        console.error("Playback failed:", err);
-      });
+      audio
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          console.error("Playback failed:", err);
+        });
     }
   };
 
@@ -112,6 +142,7 @@ export default function Component() {
     setCurrentIndex(null);
     setIsPlaying(false);
     setProgress(0);
+    setCurrentTime(0);
   };
 
   useEffect(() => {
@@ -119,13 +150,16 @@ export default function Component() {
     if (!audio) return;
 
     const handleTimeUpdate = () => {
+      setCurrentTime(audio.currentTime);
       if (audio.duration) {
+        setDuration(audio.duration);
         setProgress((audio.currentTime / audio.duration) * 100);
       }
     };
 
     const handleEnded = () => {
-      const nextIdx = currentIndex !== null ? (currentIndex + 1) % audioLogs.length : 0;
+      const nextIdx =
+        currentIndex !== null ? (currentIndex + 1) % audioLogs.length : 0;
       playAudio(nextIdx);
     };
 
@@ -137,16 +171,16 @@ export default function Component() {
       setIsPlaying(true);
     };
 
-    audio.addEventListener('timeupdate', handleTimeUpdate);
-    audio.addEventListener('ended', handleEnded);
-    audio.addEventListener('pause', handlePause);
-    audio.addEventListener('play', handlePlay);
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("pause", handlePause);
+    audio.addEventListener("play", handlePlay);
 
     return () => {
-      audio.removeEventListener('timeupdate', handleTimeUpdate);
-      audio.removeEventListener('ended', handleEnded);
-      audio.removeEventListener('pause', handlePause);
-      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.removeEventListener("ended", handleEnded);
+      audio.removeEventListener("pause", handlePause);
+      audio.removeEventListener("play", handlePlay);
     };
   }, [currentIndex]);
 
@@ -202,7 +236,9 @@ export default function Component() {
                   </div>
 
                   <span className="px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider border border-[#f9a01b] text-[#f9a01b]">
-                    {log.duration}
+                    {durations[log.id]
+                      ? formatTime(durations[log.id])
+                      : log.duration}
                   </span>
                 </div>
 
@@ -251,7 +287,7 @@ export default function Component() {
           <div className="flex-1">
             <p className="font-bold text-white">{currentLog?.title}</p>
             <p className="text-sm font-bold text-[#f9a01b]">
-              {isPlaying ? "Now Playing" : "Paused"}
+              {formatTime(currentTime)} / {formatTime(duration)}
             </p>
           </div>
 
