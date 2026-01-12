@@ -107,6 +107,17 @@ export const FORMS_DATA: ExamForm[] = [
     courses: "IPM (5-Years)",
   },
   {
+    name: "NMIMS (NPAT 2026)",
+    startDate: "To be announced",
+    endDate: "To be announced",
+    examName: "NPAT 2026",
+    examDate: "Coming Soon",
+    status: "Coming Soon",
+    link: "https://apply.nicmar.ac.in/",
+    courses:
+      "IPM (5 Years), BBA (3-Years), BBA (International Business), Bachelor in Business Management & Marketing",
+  },
+  {
     name: "IIM Rohtak",
     startDate: "To be announced",
     endDate: "To be announced",
@@ -266,17 +277,6 @@ export const FORMS_DATA: ExamForm[] = [
     status: "Open",
     link: "https://espro.christuniversity.in/Application/",
     courses: "BBA / BBA (Hons)",
-  },
-  {
-    name: "NMIMS (NPAT 2026)",
-    startDate: "To be announced",
-    endDate: "To be announced",
-    examName: "NPAT 2026",
-    examDate: "Coming Soon",
-    status: "Coming Soon",
-    link: "https://apply.nicmar.ac.in/",
-    courses:
-      "IPM (5 Years), BBA (3-Years), BBA (International Business), Bachelor in Business Management & Marketing",
   },
   {
     name: "NFSU",

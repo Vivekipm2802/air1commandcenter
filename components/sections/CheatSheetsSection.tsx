@@ -16,7 +16,7 @@ export const CheatSheetsSection: React.FC = () => {
       icon: <Scale />,
       color: "text-blue-400",
       bg: "bg-blue-400/10",
-      count: "150+ Maxims",
+      count: "Formula Book",
       viewUrl:
         "https://drive.google.com/file/d/1cxCqiNXtMCf9vgwfScMvUequighPR1Yi/view",
       downloadUrl:
@@ -27,7 +27,7 @@ export const CheatSheetsSection: React.FC = () => {
       icon: <ShieldCheck />,
       color: "text-purple-400",
       bg: "bg-purple-400/10",
-      count: "80+ Key Articles",
+      count: "Topic-wise Strategy",
       viewUrl:
         "https://drive.google.com/file/d/1VBafb7mZ37voc5Lx3yK80kbo68QcGcCZ/view",
       downloadUrl:
@@ -38,7 +38,7 @@ export const CheatSheetsSection: React.FC = () => {
       icon: <Zap />,
       color: "text-[#f9a01b]",
       bg: "bg-orange-400/10",
-      count: "25+ Strategies",
+      count: "Topic-wise Strategy",
       viewUrl:
         "https://drive.google.com/file/d/1lNQxcfTKzYQ2bX3wuCrD1KTghkD7CfmF/view",
       downloadUrl:
@@ -49,7 +49,7 @@ export const CheatSheetsSection: React.FC = () => {
       icon: <Book />,
       color: "text-green-400",
       bg: "bg-green-400/10",
-      count: "500+ Words",
+      count: "Topic-wise Strategy",
       viewUrl:
         "https://drive.google.com/file/d/1dU-U44riXDA9TvLnoeMSQnPwKKUHV2j0/view",
       downloadUrl:
@@ -86,7 +86,7 @@ export const CheatSheetsSection: React.FC = () => {
               <h4 className="text-lg font-bold group-hover:text-[#f9a01b] transition-colors">
                 {sheet.title}
               </h4>
-              {/* <p className="text-sm text-slate-500">{sheet.count} included</p> */}
+              <p className="text-sm text-slate-500">{sheet.count}</p>
             </div>
             <div className="flex items-center gap-2">
               <button

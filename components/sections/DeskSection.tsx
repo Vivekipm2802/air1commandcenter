@@ -834,8 +834,13 @@ export default function IPMATChecker() {
                   min="0"
                   max="100"
                   step="0.01"
-                  required
-                  className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 rounded-lg text-white focus:outline-none transition-colors"
+                  required={formData.twelfthYear !== "2026"}
+                  disabled={formData.twelfthYear === "2026"}
+                  className={`w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 rounded-lg text-white focus:outline-none transition-colors ${
+                    formData.twelfthYear === "2026"
+                      ? "opacity-50 cursor-not-allowed"
+                      : ""
+                  }`}
                   onFocus={(e) => (e.target.style.borderColor = primaryColor)}
                   onBlur={(e) => (e.target.style.borderColor = "#334155")}
                 />

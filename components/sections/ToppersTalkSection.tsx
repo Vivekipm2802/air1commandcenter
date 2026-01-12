@@ -89,7 +89,7 @@ export default function Component() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#f9a01b] text-[#f9a01b] text-xs font-bold mb-6">
                 <Star className="w-3 h-3 fill-current" /> SUCCESS STORY
               </div>
-              <h2 className="text-4xl md:text-6xl font-black mb-4 text-white">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
                 The Blueprint of <span className="text-[#f9a01b]">AIR 1.</span>
               </h2>
               <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
@@ -219,7 +219,7 @@ export default function Component() {
                         }
                         className="text-[#f9a01b] text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition-transform"
                       >
-                        Try Now <ChevronRight className="w-4 h-4" />
+                        Challenge yourself <ChevronRight className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -290,7 +290,7 @@ export default function Component() {
               </div>
               <div className="flex-1">
                 <h4 className="font-black text-lg text-white">
-                  My Daily Timetable
+                  Akshat Attri's Daily Timetable
                 </h4>
                 <p className="text-slate-500 text-sm">
                   Live Excel sheet with hour-by-hour logs.
