@@ -199,6 +199,20 @@ export default function Component() {
       description: "In-depth practice session for Verbal Ability",
       category: "Verbal Ability",
     },
+    {
+      id: 36,
+      title: "Logical Reasoning Strategy",
+      url: "https://youtu.be/OHoZwH4XD28",
+      description: "Strategic approach to mastering Logical Reasoning",
+      category: "Logical Reasoning",
+    },
+    {
+      id: 37,
+      title: "Logical Reasoning Practice",
+      url: "https://youtu.be/AmKrUqMT5Y4",
+      description: "In-depth practice session for Logical Reasoning",
+      category: "Logical Reasoning",
+    },
   ];
 
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -306,13 +320,15 @@ export default function Component() {
           })}
         </div>
 
-        {activeTab === "Verbal Ability" && filteredVideos.length > 0 && (
-          <div className="text-center mt-12 mb-8">
-            <p className="text-lg font-medium text-gray-400">
-              More videos coming soon...
-            </p>
-          </div>
-        )}
+        {(activeTab === "Verbal Ability" ||
+          activeTab === "Logical Reasoning") &&
+          filteredVideos.length > 0 && (
+            <div className="text-center mt-12 mb-8">
+              <p className="text-lg font-medium text-gray-400">
+                More videos coming soon...
+              </p>
+            </div>
+          )}
 
         {filteredVideos.length === 0 && (
           <div className="text-center py-20">
