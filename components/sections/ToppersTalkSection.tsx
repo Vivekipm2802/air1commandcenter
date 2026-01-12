@@ -135,7 +135,7 @@ export default function Component() {
                 </p>
               </div>
               <button
-                onClick={() => window.open("/try-yourself.jpg", "_blank")}
+                onClick={() => window.open("/try-yourself.png", "_blank")}
                 className="text-[#f9a01b] text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition-transform"
               >
                 Try Yourself <ChevronRight className="w-4 h-4" />
