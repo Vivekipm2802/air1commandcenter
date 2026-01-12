@@ -499,154 +499,215 @@ export default function IPMATChecker() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
-  const calculateAge = (dob) => {
-    const today = new Date();
-    const birthDate = new Date(dob);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (
-      monthDiff < 0 ||
-      (monthDiff === 0 && today.getDate() < birthDate.getDate())
-    ) {
-      age--;
-    }
-    return age;
+    setFormData((prev) => {
+      const next = { ...prev, [name]: value };
+
+      return next;
+    });
   };
 
   const checkEligibility = (e) => {
     e.preventDefault();
 
-    const age = calculateAge(formData.dob);
-    const category = formData.category;
+    const birthDate = new Date(formData.dob);
+    const tenthYear = parseInt(formData.tenthYear, 10);
     const tenthMarks = parseFloat(formData.tenthMarks);
+    const twelfthYear = parseInt(formData.twelfthYear, 10);
     const twelfthMarks = parseFloat(formData.twelfthMarks);
-    const twelfthYear = formData.twelfthYear;
-    const mathStats = formData.mathStats;
+    const mathStats = formData.mathStats; // "yes" | "no"
+
+    const isValidDate = (d) => d instanceof Date && !Number.isNaN(d.getTime());
+
+    const dobOnOrAfter = (cutoffISO) => {
+      const cutoff = new Date(cutoffISO);
+      if (!isValidDate(birthDate) || !isValidDate(cutoff)) return false;
+      return birthDate.getTime() >= cutoff.getTime();
+    };
 
     const colleges = [
+      // Criteria aligned to the provided table
       {
         name: "IIM Indore (IPM)",
-        minAge: 20,
-        maxAge: { general: 20, obc: 22, sc: 22, st: 22, ews: 20, pwd: 22 },
-        minTenthMarks: 60,
-        minTwelfthMarks: {
-          general: 60,
-          obc: 60,
-          sc: 55,
-          st: 55,
-          ews: 60,
-          pwd: 55,
-        },
-        mathRequired: true,
-      },
-      {
-        name: "IIM Rohtak (IPM)",
-        minAge: 18,
-        maxAge: { general: 20, obc: 22, sc: 22, st: 22, ews: 20, pwd: 22 },
-        minTenthMarks: 60,
-        minTwelfthMarks: {
-          general: 60,
-          obc: 60,
-          sc: 55,
-          st: 55,
-          ews: 60,
-          pwd: 55,
-        },
-        mathRequired: true,
+        dobOnOrAfterISO: "2006-08-01",
+        minTenthMarks: null,
+        minTwelfthMarks: null,
+        tenthYearMin: null,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: false,
       },
       {
         name: "IIM Ranchi (IPM)",
-        minAge: 17,
-        maxAge: { general: 20, obc: 22, sc: 22, st: 22, ews: 20, pwd: 22 },
+        dobOnOrAfterISO: "2006-08-01",
         minTenthMarks: 60,
-        minTwelfthMarks: {
-          general: 60,
-          obc: 60,
-          sc: 55,
-          st: 55,
-          ews: 60,
-          pwd: 55,
-        },
-        mathRequired: false,
+        minTwelfthMarks: 60,
+        tenthYearMin: null,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: false,
+      },
+      {
+        name: "IIM Rohtak (IPM)",
+        dobOnOrAfterISO: "2006-08-01",
+        minTenthMarks: 60,
+        minTwelfthMarks: 60,
+        tenthYearMin: null,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: false,
       },
       {
         name: "IIM Jammu (IPM)",
-        minAge: 18,
-        maxAge: { general: 20, obc: 22, sc: 22, st: 22, ews: 20, pwd: 22 },
+        dobOnOrAfterISO: null,
         minTenthMarks: 60,
-        minTwelfthMarks: {
-          general: 60,
-          obc: 60,
-          sc: 55,
-          st: 55,
-          ews: 60,
-          pwd: 55,
-        },
-        mathRequired: true,
+        minTwelfthMarks: 60,
+        tenthYearMin: 2022,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: false,
       },
       {
         name: "IIM Bodh Gaya (IPM)",
-        minAge: 18,
-        maxAge: { general: 20, obc: 22, sc: 22, st: 22, ews: 20, pwd: 22 },
+        dobOnOrAfterISO: null,
         minTenthMarks: 60,
-        minTwelfthMarks: {
-          general: 60,
-          obc: 60,
-          sc: 55,
-          st: 55,
-          ews: 60,
-          pwd: 55,
-        },
-        mathRequired: false,
+        minTwelfthMarks: 60,
+        tenthYearMin: 2023,
+        twelfthYearMin: 2025,
+        twelfthYearAllowed: null,
+        requireMathStats: false,
+      },
+      {
+        name: "IIM Amritsar (IPM)",
+        dobOnOrAfterISO: "2006-07-01",
+        minTenthMarks: 60,
+        minTwelfthMarks: 60,
+        tenthYearMin: null,
+        twelfthYearMin: null,
+        twelfthYearAllowed: [2025, 2026],
+        requireMathStats: true,
+      },
+      {
+        name: "IIFT Kakinada (IPM)",
+        dobOnOrAfterISO: "2006-08-01",
+        minTenthMarks: 60,
+        minTwelfthMarks: 60,
+        tenthYearMin: 2022,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: true,
+      },
+      {
+        name: "IIM Sirmaur (IPM)",
+        dobOnOrAfterISO: "2006-08-01",
+        minTenthMarks: null,
+        minTwelfthMarks: null,
+        tenthYearMin: null,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: false,
+      },
+      {
+        name: "IIM Shillong (IPM)",
+        dobOnOrAfterISO: "2006-08-01",
+        minTenthMarks: 60,
+        minTwelfthMarks: 60,
+        tenthYearMin: null,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: true,
+      },
+      {
+        name: "IIM Bangalore (BBA DBE)",
+        dobOnOrAfterISO: "2006-08-01",
+        minTenthMarks: 60,
+        minTwelfthMarks: null,
+        tenthYearMin: null,
+        twelfthYearMin: 2024,
+        twelfthYearAllowed: null,
+        requireMathStats: false,
       },
     ];
 
     const eligibilityResults = colleges.map((college) => {
       let eligible = true;
-      let reasons = [];
+      const reasons = [];
 
-      if (age < college.minAge) {
-        eligible = false;
-        reasons.push(`Minimum age is ${college.minAge} years`);
+      // DOB rule (Born on or after...)
+      if (college.dobOnOrAfterISO) {
+        if (!dobOnOrAfter(college.dobOnOrAfterISO)) {
+          eligible = false;
+          reasons.push(
+            `DOB must be on/after ${new Date(
+              college.dobOnOrAfterISO
+            ).toLocaleDateString("en-IN")}`
+          );
+        }
       }
 
-      if (age > college.maxAge[category]) {
-        eligible = false;
-        reasons.push(
-          `Maximum age for ${category.toUpperCase()} is ${
-            college.maxAge[category]
-          } years`
-        );
+      // 10th passing year rule (where applicable)
+      if (college.tenthYearMin != null) {
+        if (Number.isNaN(tenthYear) || tenthYear < college.tenthYearMin) {
+          eligible = false;
+          reasons.push(
+            `10th passing year must be ${college.tenthYearMin} or later`
+          );
+        }
       }
 
-      if (tenthMarks < college.minTenthMarks) {
-        eligible = false;
-        reasons.push(`Minimum 10th marks: ${college.minTenthMarks}%`);
+      // 12th passing year rule (where applicable)
+      if (college.twelfthYearMin != null) {
+        if (Number.isNaN(twelfthYear) || twelfthYear < college.twelfthYearMin) {
+          eligible = false;
+          reasons.push(
+            `12th passing year must be ${college.twelfthYearMin} or later`
+          );
+        }
+      }
+      if (college.twelfthYearAllowed) {
+        if (!college.twelfthYearAllowed.includes(twelfthYear)) {
+          eligible = false;
+          reasons.push(
+            `12th passing year must be ${college.twelfthYearAllowed.join(
+              " or "
+            )}`
+          );
+        }
       }
 
-      if (
-        twelfthYear !== "2026" &&
-        twelfthMarks < college.minTwelfthMarks[category]
-      ) {
-        eligible = false;
-        reasons.push(
-          `Minimum 12th marks: ${college.minTwelfthMarks[category]}%`
-        );
+      // 10th % rule (where applicable)
+      if (college.minTenthMarks != null) {
+        if (Number.isNaN(tenthMarks) || tenthMarks < college.minTenthMarks) {
+          eligible = false;
+          reasons.push(`Minimum 10th marks: ${college.minTenthMarks}%`);
+        }
       }
 
-      if (college.mathRequired && mathStats === "no") {
-        eligible = false;
-        reasons.push("Mathematics/Statistics required in 11th/12th");
+      // 12th % rule (where applicable; if appearing in 2026, we can't validate marks now)
+      if (college.minTwelfthMarks != null) {
+        if (twelfthYear === 2026) {
+          reasons.push(
+            "12th: Appearing in 2026 (eligibility subject to meeting % criteria)"
+          );
+        } else if (
+          Number.isNaN(twelfthMarks) ||
+          twelfthMarks < college.minTwelfthMarks
+        ) {
+          eligible = false;
+          reasons.push(`Minimum 12th marks: ${college.minTwelfthMarks}%`);
+        }
+      } else if (twelfthYear === 2026) {
+        reasons.push("12th: Appearing in 2026");
       }
 
-      if (twelfthYear === "2026") {
-        reasons.push("You are appearing for 12th in 2026");
+      // Math/Stats requirement in 11th/12th
+      if (college.requireMathStats) {
+        if (mathStats !== "yes") {
+          eligible = false;
+          reasons.push("Mathematics/Statistics required in 11th/12th");
+        }
       }
 
-      // Add positive message when eligible
       if (eligible) {
         reasons.push("Congratulations! You meet all eligibility criteria");
       }
@@ -683,8 +744,9 @@ export default function IPMATChecker() {
             Eligibility for IPMAT 2026
           </h2>
           <p className="text-slate-400 mb-8">
-            Fill in your details to check eligibility for IIM Indore, Rohtak,
-            Ranchi, Jammu & Bodh Gaya
+            Fill in your details to check eligibility as per the latest criteria
+            table (IIM Indore, Ranchi, Rohtak, Jammu, Bodh Gaya, Amritsar, IIFT
+            Kakinada, Sirmaur, Shillong & IIM Bangalore).
           </p>
 
           <form onSubmit={checkEligibility} className="space-y-6">
