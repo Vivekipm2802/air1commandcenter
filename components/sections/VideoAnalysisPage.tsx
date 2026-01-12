@@ -4,56 +4,200 @@ import { Play, X } from "lucide-react";
 export default function Component() {
   const videos = [
     {
-      id: 1,
-      title: "How to clear quants QA (SA) cut off in 10 mins",
-      url: "https://youtu.be/Q7lS5zdaOKM?si=lZneP57xGJCi6HfL",
-      description:
-        "Quick strategies to clear quantitative aptitude cutoffs efficiently",
+      id: 8,
+      title: "Quantitative Ability Strategy",
+      url: "https://youtu.be/eyf981KeOA8",
+      description: "Strategic approach to mastering Quantitative Ability",
       category: "Quantitative Aptitude",
     },
     {
-      id: 2,
-      title: "Introduction to Numbers",
-      url: "https://youtu.be/raKEb6Ax4WE",
-      description: "Learn the fundamentals of number systems and concepts",
+      id: 9,
+      title: "Quadratic Equations Masterclass",
+      url: "https://youtu.be/3dvDC38kukA",
+      description: "Deep dive into quadratic equations concepts and problems",
       category: "Quantitative Aptitude",
     },
     {
-      id: 3,
-      title: "Introduction to Averages",
-      url: "https://youtu.be/bBhzPsinUYY",
-      description: "Master the basics of averages and their applications",
+      id: 10,
+      title: "Profit and Loss - Part 1",
+      url: "https://youtu.be/bqVyQ3HBrOg",
+      description: "Fundamental concepts of Profit and Loss",
       category: "Quantitative Aptitude",
     },
     {
-      id: 4,
-      title: "Reading Comprehension (Tones)",
-      url: "https://youtu.be/CDEWTaMInUA",
-      description: "Understanding tones and nuances in reading comprehension",
+      id: 11,
+      title: "Profit and Loss - Part 2",
+      url: "https://youtu.be/YZMDCFTKFfM",
+      description: "Advanced problems in Profit and Loss",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 12,
+      title: "Profit and Loss - Part 3",
+      url: "https://youtu.be/7PS5XjmvCUE",
+      description: "Profit and Loss practice session",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 13,
+      title: "Profit and Loss - Part 4",
+      url: "https://youtu.be/QlLp-9OC4cM",
+      description: "Solving complex Profit and Loss questions",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 14,
+      title: "Profit and Loss - Part 5",
+      url: "https://youtu.be/k65D2Hds_NA",
+      description: "Key strategies for Profit and Loss",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 15,
+      title: "Profit and Loss - Part 6",
+      url: "https://youtu.be/GXD7Oy0Om-A",
+      description: "Expert tips on Profit and Loss",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 16,
+      title: "Profit and Loss - Part 7",
+      url: "https://youtu.be/LALOnfFNZw0",
+      description: "Profit and Loss detailed analysis",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 17,
+      title: "Profit and Loss - Part 8",
+      url: "https://youtu.be/HFRitg-WP5w",
+      description: "Mastering Profit and Loss techniques",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 18,
+      title: "Profit and Loss - Part 9",
+      url: "https://youtu.be/kyHih58qXiE",
+      description: "Profit and Loss exam-style questions",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 19,
+      title: "Profit and Loss - Part 10",
+      url: "https://youtu.be/80qyYOvl3Rk",
+      description: "Important Profit and Loss concepts",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 20,
+      title: "Profit and Loss - Part 11",
+      url: "https://youtu.be/s4eh5zCbhHU",
+      description: "Profit and Loss revision",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 21,
+      title: "Profit and Loss - Part 12",
+      url: "https://youtu.be/avUC8JUYe98",
+      description: "Profit and Loss walkthrough",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 22,
+      title: "Profit and Loss - Part 13",
+      url: "https://youtu.be/IdIBDdx0Q84",
+      description: "Profit and Loss solution strategies",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 23,
+      title: "Profit and Loss - Part 14",
+      url: "https://youtu.be/ps5o47GlS_c",
+      description: "Profit and Loss deep dive",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 24,
+      title: "Profit and Loss - Part 15",
+      url: "https://youtu.be/h9A16WIMDDc",
+      description: "Profit and Loss comprehensive guide",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 25,
+      title: "Profit and Loss - Part 16",
+      url: "https://youtu.be/g4VIisjj8z4",
+      description: "Profit and Loss problem solving",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 26,
+      title: "Profit and Loss - Part 17",
+      url: "https://youtu.be/t73Mq-tfHlI",
+      description: "Profit and Loss advanced techniques",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 27,
+      title: "Profit and Loss - Part 18",
+      url: "https://youtu.be/HIRuCORxBec",
+      description: "Profit and Loss final review",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 28,
+      title: "Profit and Loss - Part 19",
+      url: "https://youtu.be/ZIaKnDqZ3cg",
+      description: "Profit and Loss exam prep",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 29,
+      title: "Profit and Loss - Part 20",
+      url: "https://youtu.be/a8c0QrA6GlU",
+      description: "Profit and Loss essential tips",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 30,
+      title: "Quantitative Aptitude - Extra 1",
+      url: "https://youtu.be/jpTFv9jjrw8",
+      description: "Additional practice for QA",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 31,
+      title: "Quantitative Aptitude - Extra 2",
+      url: "https://youtu.be/dWZ7Il9ulug",
+      description: "Supplementary QA problems",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 32,
+      title: "Quantitative Aptitude - Extra 3",
+      url: "https://youtu.be/OC18v4JIAtU",
+      description: "More QA concepts explained",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 33,
+      title: "Quantitative Aptitude - Extra 4",
+      url: "https://youtu.be/A7YdgwCT8to",
+      description: "Final set of QA questions",
+      category: "Quantitative Aptitude",
+    },
+    {
+      id: 34,
+      title: "Verbal Ability Strategy",
+      url: "https://www.youtube.com/watch?v=wXakzp9DQYo",
+      description: "Strategic approach to mastering Verbal Ability",
       category: "Verbal Ability",
     },
     {
-      id: 5,
-      title: "Root Words",
-      url: "https://youtu.be/wXakzp9DQYo",
-      description: "Build vocabulary through understanding root words",
+      id: 35,
+      title: "Verbal Ability Practice",
+      url: "https://www.youtube.com/watch?v=CDEWTaMInUA",
+      description: "In-depth practice session for Verbal Ability",
       category: "Verbal Ability",
-    },
-    {
-      id: 6,
-      title: "IPMAT 2023 Solutions Part 1",
-      url: "https://youtu.be/COMWsh7rIE0",
-      description:
-        "IPMAT Indore 2023 QA SA Solutions || IPMAT 2023 Solutions Part 1",
-      category: "Quantitative Aptitude",
-    },
-    {
-      id: 7,
-      title: "IPMAT 2023 Solutions Part 2",
-      url: "https://youtu.be/OpngTNZGUw8",
-      description:
-        "IPMAT Indore 2023 QA MCQ Solutions || IPMAT 2023 Solutions Part 2 (A)",
-      category: "Quantitative Aptitude",
     },
   ];
 
@@ -161,6 +305,14 @@ export default function Component() {
             );
           })}
         </div>
+
+        {activeTab === "Verbal Ability" && filteredVideos.length > 0 && (
+          <div className="text-center mt-12 mb-8">
+            <p className="text-lg font-medium text-gray-400">
+              More videos coming soon...
+            </p>
+          </div>
+        )}
 
         {filteredVideos.length === 0 && (
           <div className="text-center py-20">
