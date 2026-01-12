@@ -8,7 +8,7 @@ export default function Component() {
       id: "1",
       title: "PYQ Quantitative Ability",
       driveLink:
-        "https://drive.google.com/file/d/15yQXr-LgjmIVukMUvvbqk1RRAo4sJKnL/view?usp=sharing",
+        "https://drive.google.com/file/d/15yQXr-LgjmIVukMUvvbqk1RRAo4sJKnL/view",
       description:
         "Topic-wise previous year questions for structured practice.",
       featured: true,
@@ -17,7 +17,7 @@ export default function Component() {
       id: "2",
       title: "PYQ Verbal Ability",
       driveLink:
-        "https://drive.google.com/file/d/1aQY6qKMzllw8G1CPn2XtMOyRYBzN3d1S/view?usp=sharing",
+        "https://drive.google.com/file/d/1aQY6qKMzllw8G1CPn2XtMOyRYBzN3d1S/view",
       description:
         "Topic-wise previous year questions for structured practice.",
       featured: true,
@@ -30,7 +30,7 @@ export default function Component() {
       id: "3",
       title: "IPMAT 2019 Question Paper",
       driveLink:
-        "https://drive.google.com/file/d/1SgCtILYDOZ31AETeOF6e18NY9t-u02ZT/view?usp=sharing",
+        "https://drive.google.com/file/d/1UTkGWTwvn1-HuGIgCbPcdbZjb_K3HNSI/view?usp=sharing",
       description:
         "Official IPMAT 2019 question paper with complete solutions.",
       year: 2019,
@@ -39,7 +39,7 @@ export default function Component() {
       id: "4",
       title: "IPMAT 2020 Question Paper",
       driveLink:
-        "https://drive.google.com/file/d/1mWh3R21HRFTEQBuAwLifeFJORX28TpHT/view?usp=sharing",
+        "https://drive.google.com/file/d/1SH1ZHac4uOBlGO_w8JwN9HV3BbVVzonf/view?usp=sharing",
       description:
         "Official IPMAT 2020 question paper with complete solutions.",
       year: 2020,
@@ -48,7 +48,7 @@ export default function Component() {
       id: "5",
       title: "IPMAT 2021 Question Paper",
       driveLink:
-        "https://drive.google.com/file/d/1R8jJhuL9DBl21AU-oUzHK4Y1BZjzhHER/view?usp=sharing",
+        "https://drive.google.com/file/d/1HUaaJ8gNKH6RrGF5LM0ng0B0L-6u_N8I/view?usp=sharing",
       description:
         "Official IPMAT 2021 question paper with complete solutions.",
       year: 2021,
@@ -57,7 +57,7 @@ export default function Component() {
       id: "6",
       title: "IPMAT Indore 2022 Question Paper",
       driveLink:
-        "https://drive.google.com/file/d/1hCCeESR3NuxyUOjejz61XuxJTHnQC3w8/view?usp=sharing",
+        "https://drive.google.com/file/d/1OpEXKBEFOXT32-5gWknPcEQb2G2fuZID/view?usp=sharing",
       description:
         "Official IPMAT 2022 question paper with complete solutions.",
       year: 2022,
@@ -66,7 +66,7 @@ export default function Component() {
       id: "7",
       title: "IPMAT Indore 2023 Question Paper",
       driveLink:
-        "https://drive.google.com/file/d/1soDNV-CuNzZigVdo77_Dxp68MbMD19VI/view?usp=sharing",
+        "https://drive.google.com/file/d/1EGRTSS-pFy1hrFCqhw79CDeLV875VspW/view?usp=sharing",
       description:
         "Official IPMAT 2023 question paper with complete solutions.",
       year: 2023,
