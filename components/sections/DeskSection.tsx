@@ -490,7 +490,6 @@ export default function IPMATChecker() {
     category: "",
     tenthYear: "",
     tenthMarks: "",
-    tenthMathMarks: "",
     twelfthYear: "",
     twelfthMarks: "",
     mathStats: "",
@@ -523,7 +522,6 @@ export default function IPMATChecker() {
     const age = calculateAge(formData.dob);
     const category = formData.category;
     const tenthMarks = parseFloat(formData.tenthMarks);
-    const tenthMathMarks = parseFloat(formData.tenthMathMarks);
     const twelfthMarks = parseFloat(formData.twelfthMarks);
     const twelfthYear = formData.twelfthYear;
     const mathStats = formData.mathStats;
@@ -642,11 +640,6 @@ export default function IPMATChecker() {
       if (college.mathRequired && mathStats === "no") {
         eligible = false;
         reasons.push("Mathematics/Statistics required in 11th/12th");
-      }
-
-      if (tenthMathMarks < 60) {
-        eligible = false;
-        reasons.push("Minimum 10th Mathematics marks: 60%");
       }
 
       if (twelfthYear === "2026") {
@@ -785,25 +778,6 @@ export default function IPMATChecker() {
 
               <div>
                 <label className="block font-semibold mb-2 text-slate-200">
-                  10th Mathematics Marks (%)
-                </label>
-                <input
-                  type="number"
-                  name="tenthMathMarks"
-                  value={formData.tenthMathMarks}
-                  onChange={handleChange}
-                  min="0"
-                  max="100"
-                  step="0.01"
-                  required
-                  className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 rounded-lg text-white focus:outline-none transition-colors"
-                  onFocus={(e) => (e.target.style.borderColor = primaryColor)}
-                  onBlur={(e) => (e.target.style.borderColor = "#334155")}
-                />
-              </div>
-
-              <div>
-                <label className="block font-semibold mb-2 text-slate-200">
                   12th Passing Year
                 </label>
                 <select
@@ -822,7 +796,7 @@ export default function IPMATChecker() {
                 </select>
               </div>
 
-              <div className="md:col-span-2">
+              <div>
                 <label className="block font-semibold mb-2 text-slate-200">
                   12th Board Marks (%)
                 </label>
