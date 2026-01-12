@@ -75,7 +75,7 @@ export default function Component() {
       id: "8",
       title: "IPMAT Indore 2024 Question Paper",
       driveLink:
-        "https://drive.google.com/file/d/1iWd2MAV0JPN0qV3auhzE-XWhvjiqMO_I/view?usp=sharing",
+        "https://drive.google.com/file/d/18BRCQyxB6-jut8jHlrymSq3IV4_cZtmB/view?usp=sharing",
       description:
         "Official IPMAT 2024 question paper with complete solutions.",
       year: 2024,
@@ -84,7 +84,7 @@ export default function Component() {
       id: "9",
       title: "IPMAT Indore 2025 Question Paper",
       driveLink:
-        "https://drive.google.com/file/d/1nxcpovN2FfWT3bAa8LvU-djipeZcVhPw/view?usp=sharing",
+        "https://drive.google.com/file/d/1iMJdAfI2zZ7xuKXnSgofC3puFXOhUuNS/view?usp=sharing",
       description:
         "Official IPMAT 2025 question paper with complete solutions.",
       year: 2025,

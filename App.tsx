@@ -24,21 +24,24 @@ const App: React.FC = () => {
         <main className="flex-1 overflow-y-auto px-6 py-8 md:px-12 lg:px-16 scroll-smooth">
           <div className="max-w-6xl mx-auto">
             {/* Header Section */}
-            <div className="mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold tracking-wider uppercase">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
-                </span>
-                IPMAT Free Learning Resources
+            <div className="mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 flex items-center justify-between">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold tracking-wider uppercase">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+                  </span>
+                  IPMAT Free Learning Resources
+                </div>
+                <h1 className="text-4xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400">
+                  AIR 1{" "}
+                  <span className="text-[#f9a01b]">Command Center.</span>
+                </h1>
+                <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                  Nikhilesh Sanka didn't just study hard. He built a system.
+                </p>
               </div>
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400">
-                AIR 1{" "}
-                <span className="text-[#f9a01b]">Command Center.</span>
-              </h1>
-              <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
-                Nikhilesh Sanka didn't just study hard. He built a system.
-              </p>
+              <img src="/whitelogo.svg" alt="Logo" className="w-24 h-24 md:w-32 md:h-32 cursor-pointer" onClick={() => window.open("https://ipmcareer.com", "_blank")} />
             </div>
 
             {/* Sticky Tabs Navigation */}

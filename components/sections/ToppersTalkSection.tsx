@@ -121,19 +121,14 @@ export default function Component() {
             </div>
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 hover:border-red-500/30 transition-all">
               <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-                <span className="text-red-500">01.</span> Quantitative Reasoning
+                <span className="text-red-500">01.</span> Data Interpretation
               </h4>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                "I struggled with this section for 3 months. The time management
-                and accuracy balance was a nightmare until I created my own
-                practice system."
-              </p>
-              <div className="p-4 bg-slate-800/50 rounded-2xl border border-slate-700 mb-6">
-                <p className="text-xs text-slate-500 italic">
-                  "Sample Question: Data Interpretation questions cost me 2
-                  marks in every mock until August."
-                </p>
-              </div>
+              <img
+                src="/try-yourself.png"
+                alt="Try Yourself"
+                className="w-full h-auto rounded-lg blur-sm mb-6 cursor-pointer"
+                onClick={() => window.open("/try-yourself.png", "_blank")}
+              />
               <button
                 onClick={() => window.open("/try-yourself.png", "_blank")}
                 className="text-[#f9a01b] text-sm font-bold flex items-center gap-2 hover:translate-x-1 transition-transform"

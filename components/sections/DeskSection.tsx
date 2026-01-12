@@ -618,14 +618,14 @@ export default function IPMATChecker() {
         requireMathStats: true,
       },
       {
-        name: "IIM Bangalore (BBA DBE)",
+        name: "IIM Bangalore UG",
         dobOnOrAfterISO: "2006-08-01",
         minTenthMarks: 60,
         minTwelfthMarks: null,
         tenthYearMin: null,
         twelfthYearMin: 2024,
         twelfthYearAllowed: null,
-        requireMathStats: false,
+        requireMathStats: true,
       },
     ];
 
