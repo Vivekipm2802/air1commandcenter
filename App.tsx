@@ -34,7 +34,7 @@ const App: React.FC = () => {
                   IPMAT Free Learning Resources
                 </div>
                 <h1 className="text-4xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-slate-400">
-                  AIR 1 <span className="text-[#f9a01b]">Command Centers.</span>
+                  AIR 1 <span className="text-[#f9a01b]">Command Center.</span>
                 </h1>
                 <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
                   Nikhilesh Sanka didn't just study hard. He built a system.
