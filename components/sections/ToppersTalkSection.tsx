@@ -90,7 +90,7 @@ export default function Component() {
                 <Star className="w-3 h-3 fill-current" /> SUCCESS STORY
               </div>
               <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
-                The Blueprint of <span className="text-[#f9a01b]">AIR 1.</span>
+                The Blueprint ofs <span className="text-[#f9a01b]">AIR 1.</span>
               </h2>
               <p className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
                 "Becoming AIR 1 wasn't about studying 18 hours a day. It was
